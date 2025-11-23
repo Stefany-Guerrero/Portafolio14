@@ -14,7 +14,6 @@
       color: white;
     }
 
-    /* HEADER */
     header {
       background: linear-gradient(90deg, #72A3ED, #3C6BC9);
       padding: 20px 40px;
@@ -32,23 +31,8 @@
       height: 70px;
       border-radius: 50%;
       border: 3px solid white;
-      box-shadow: 0 0 15px rgba(114,163,237,0.8);
     }
 
-    .nav-links a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .nav-links a:hover {
-      color: #72A3ED;
-      text-shadow: 0 0 10px #72A3ED;
-    }
-
-    /* SECCIONES */
     section {
       padding: 100px 60px;
       display: flex;
@@ -65,16 +49,6 @@
       box-shadow: 0 0 30px rgba(114,163,237,0.35);
     }
 
-    #hero .card {
-      background: #72A3ED;
-      color: white;
-    }
-
-    h1, h2, h3, h4 {
-      text-align: center;
-    }
-
-    /* CATEGORIAS */
     .categoria {
       background: #72A3ED;
       color: white;
@@ -87,36 +61,21 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      box-shadow: 0 0 15px rgba(114,163,237,0.4);
-      transition: 0.3s;
-    }
-
-    .categoria:hover {
-      background: #3C6BC9;
     }
 
     .flecha {
       font-size: 20px;
       transition: transform 0.3s ease;
     }
-
     .flecha.abierto {
       transform: rotate(90deg);
     }
 
-    /* CONTENIDO DESPLEGABLE */
     .contenido {
       display: none;
       padding: 15px 0;
-      animation: fade 0.5s;
     }
 
-    @keyframes fade {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* LISTA DE ARCHIVOS */
     .lista {
       list-style: none;
       padding-left: 0;
@@ -131,163 +90,104 @@
       border: 2px solid #72A3ED;
     }
 
-    .lista li:hover {
-      background: #e0ebff;
-      border-color: #3C6BC9;
-      cursor: pointer;
-    }
-
     .lista a {
       color: #1A2E49;
       font-weight: bold;
       text-decoration: none;
     }
 
+    .lista li:hover { background: #e0ebff; }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="imagenes/foto.jpg" alt="Foto de perfil" />
+<header>
+  <img src="imagenes/foto.jpg" alt="Foto de perfil" />
+  <nav class="nav-links">
+    <a href="#proyectos">Proyectos</a>
+  </nav>
+</header>
 
-    <nav class="nav-links">
-      <a href="#hero">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#habilidades">Habilidades</a>
-    </nav>
-  </header>
+<section id="proyectos">
+  <div class="card">
+    <h2>Mis Trabajos Académicos</h2>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="card">
-      <h1>Bienvenida a mi Portafolio</h1>
-      <p>Este es mi espacio profesional y académico.</p>
+    <!-- QUIZ -->
+    <div class="categoria" onclick="toggle('quices', this)">
+      <span class="flecha">▶</span> Quiz
     </div>
-  </section>
-
-  <!-- SOBRE MI -->
-  <section id="sobre-mi">
-    <div class="card">
-      <h2>Sobre mí</h2>
-      <p>Aquí irá tu descripción personal.</p>
+    <div id="quices" class="contenido">
+      <ul class="lista">
+        <li><a href="proyectos/quiz1/Ejercicio Práctico 1.pdf" target="_blank">Quiz 1</a></li>
+      </ul>
     </div>
-  </section>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos">
-    <div class="card">
-      <h2>Mis Trabajos Académicos</h2>
-      <p>Haz clic en una categoría para explorar los trabajos.</p>
-
-      <!-- QUIZ -->
-      <div class="categoria" onclick="toggle('quices', this)">
-        <span class="flecha">▶</span> Quiz
-      </div>
-      <div id="quices" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/quiz1/Ejercicio%20Práctico%201.pdf" target="_blank">Quiz 1</a></li>
-        </ul>
-      </div>
-
-      <!-- PARCIALES -->
-      <div class="categoria" onclick="toggle('parciales', this)">
-        <span class="flecha">▶</span> Parciales
-      </div>
-      <div id="parciales" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/parciales/Parcial 1" target="_blank">Parcial 1</a></li>
-          <li><a href="proyectos/parciales/Parcial 2.zip" target="_blank">Parcial 2</a></li>
-        </ul>
-      </div>
-
-      <!-- INVESTIGACIONES -->
-      <div class="categoria" onclick="toggle('investigaciones', this)">
-        <span class="flecha">▶</span> Investigaciones
-      </div>
-      <div id="investigaciones" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/investigaciones/Investigación 1 de Programación I.pdf" target="_blank">Investigación 1</a></li>
-          <li><a href="proyectos/investigaciones/Investigación 2, Programación.pdf" target="_blank">Investigación 2</a></li>
-        </ul>
-      </div>
-
-      <!-- LABORATORIOS -->
-      <div class="categoria" onclick="toggle('labs', this)">
-        <span class="flecha">▶</span> Laboratorios
-      </div>
-      <div id="labs" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/laboratorios/Laboratorio 1, Programaciono I.pdf" target="_blank">Laboratorio 1</a></li>
-          <li><a href="proyectos/laboratorios/Laboratorio Práctica 2, programación I 5.pdf" target="_blank">Laboratorio 2</a></li>
-        </ul>
-      </div>
-
-      <!-- TALLERES -->
-      <div class="categoria" onclick="toggle('talleres', this)">
-        <span class="flecha">▶</span> Talleres
-      </div>
-      <div id="talleres" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/talleres/Taller Practico 1.pdf" target="_blank">Taller 1</a></li>
-          <li><a href="proyectos/talleres/Taller practico 3.pdf" target="_blank">Taller 2</a></li>
-        </ul>
-      </div>
-
-      <!-- EJERCICIO PRÁCTICO -->
-      <div class="categoria" onclick="toggle('practico', this)">
-        <span class="flecha">▶</span> Ejercicio Práctico
-      </div>
-      <div id="practico" class="contenido">
-        <ul class="lista">
-          <li><a href="proyectos/quiz1/Ejercicio Práctico 1.pdf" target="_blank">Ejercicio Único</a></li>
-        </ul>
-      </div>
-
+    <!-- PARCIALES -->
+    <div class="categoria" onclick="toggle('parciales', this)">
+      <span class="flecha">▶</span> Parciales
     </div>
-  </section>
-
-  <!-- HABILIDADES -->
-  <section id="habilidades">
-    <div class="card">
-      <h2>Habilidades</h2>
-      <p>Lista de habilidades aquí...</p>
+    <div id="parciales" class="contenido">
+      <ul class="lista">
+        <li><a href="proyectos/parciales/Parcial 1" target="_blank">Parcial 1</a></li>
+        <li><a href="proyectos/parciales/Parcial 2.zip" download>Parcial 2</a></li>
+      </ul>
     </div>
-  </section>
+
+    <!-- INVESTIGACIONES -->
+    <div class="categoria" onclick="toggle('investigaciones', this)">
+      <span class="flecha">▶</span> Investigaciones
+    </div>
+    <div id="investigaciones" class="contenido">
+      <ul class="lista">
+        <li><a href="proyectos/investigaciones/Investigación 1 de Programación I.pdf" target="_blank">Investigación 1</a></li>
+        <li><a href="proyectos/investigaciones/Investigación 2, Programación.pdf" target="_blank">Investigación 2</a></li>
+      </ul>
+    </div>
+
+    <!-- LABS -->
+    <div class="categoria" onclick="toggle('labs', this)">
+      <span class="flecha">▶</span> Laboratorios
+    </div>
+    <div id="labs" class="contenido">
+      <ul class="lista">
+        <li><a href="proyectos/laboratorios/Laboratorio 1, Programaciono I.pdf" target="_blank">Laboratorio 1</a></li>
+        <li><a href="proyectos/laboratorios/Laboratorio Práctica 2, programación I 5.pdf" target="_blank">Laboratorio 2</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
 <script>
 function toggle(id, elemento) {
-  const secciones = document.querySelectorAll(".contenido");
-  const flechas = document.querySelectorAll(".flecha");
+  const el = document.getElementById(id);
+  const flecha = elemento.querySelector(".flecha");
 
-  // Cerrar otras
-  secciones.forEach(sec => {
+  // Oculta todo excepto el que toca
+  document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
-  flechas.forEach(f => f.classList.remove("abierto"));
+  document.querySelectorAll(".flecha").forEach(f => f.classList.remove("abierto"));
 
-  const el = document.getElementById(id);
+  // Alterna visibilidad
+  el.style.display = (el.style.display === "block") ? "none" : "block";
 
-  if (el.style.display === "block") {
-    el.style.display = "none";
-  } else {
-    el.style.display = "block";
-    elemento.querySelector(".flecha").classList.add("abierto");
+  // Flecha
+  flecha.classList.toggle("abierto");
 
-    // SCROLL MEJORADO
-    setTimeout(() => {
-      const offset = el.getBoundingClientRect().top + window.scrollY - 150;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }, 150);
-  }
+  // Scroll hasta mostrar archivos
+  setTimeout(() => {
+    const offset = el.offsetTop - 120;
+    window.scrollTo({ top: offset, behavior: "smooth" });
+  }, 150);
 }
 </script>
 
 </body>
 </html>
+
 
 
 
