@@ -145,6 +145,15 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* 🔹 HABILIDADES EN COLUMNAS */
+    .habilidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 30px;
+    }
+
   </style>
 </head>
 
@@ -246,7 +255,7 @@
   </div>
 </section>
 
-<!-- ⭐ CERTIFICADOS (MOVIDO ARRIBA) -->
+<!-- ⭐ CERTIFICADOS -->
 <section id="certificados">
   <div class="card">
     <h2>Certificados</h2>
@@ -264,11 +273,43 @@
   </div>
 </section>
 
-<!-- HABILIDADES -->
+<!-- ⭐ HABILIDADES -->
 <section id="habilidades">
   <div class="card">
     <h2>Habilidades</h2>
-    <p>Lista de habilidades aquí...</p>
+
+    <div class="habilidades-grid">
+
+      <!-- Columna 1 -->
+      <div>
+        <h3>Habilidades Técnicas</h3>
+        <ul class="lista">
+          <li>Programación en Java (POO, Swing)</li>
+          <li>MySQL (consultas, inserción, conexiones)</li>
+          <li>Administración básica de Windows Server & Ubuntu</li>
+          <li>Redes en Cisco Packet Tracer</li>
+          <li>Gestión de usuarios y permisos</li>
+          <li>Conceptos de seguridad informática</li>
+          <li>Estructuras de datos y lógica computacional</li>
+        </ul>
+      </div>
+
+      <!-- Columna 2 -->
+      <div>
+        <h3>Habilidades en Herramientas</h3>
+        <ul class="lista">
+          <li>GitHub (repos, commits, estructura)</li>
+          <li>MySQL Workbench</li>
+          <li>NetBeans IDE</li>
+          <li>Visual Studio Code</li>
+          <li>VirtualBox</li>
+          <li>Packet Tracer</li>
+          <li>Herramientas de documentación</li>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -296,6 +337,8 @@ function toggle(id, elemento) {
 
 </body>
 </html>
+
+
 
 
 
