@@ -14,7 +14,6 @@
       color: white;
     }
 
-    /* HEADER */
     header {
       background: linear-gradient(90deg, #72A3ED, #3C6BC9);
       padding: 20px 40px;
@@ -34,21 +33,12 @@
       border: 3px solid white;
     }
 
-    .nav-links a {
-      margin: 0 15px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* SECCIONES GENERALES */
     section {
       padding: 100px 60px;
       display: flex;
       justify-content: center;
     }
 
-    /* TARJETAS */
     .card {
       background: white;
       color: #1A2E49;
@@ -57,11 +47,6 @@
       border-radius: 20px;
       border: 3px solid #72A3ED;
       box-shadow: 0 0 30px rgba(114,163,237,0.35);
-    }
-
-    #hero .card {
-      background: #72A3ED;
-      color: white;
     }
 
     .categoria {
@@ -93,14 +78,14 @@
 
     .lista {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
       font-size: 18px;
     }
 
     .lista li {
       margin: 10px 0;
       padding: 12px 18px;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.92);
       border-radius: 10px;
       border: 2px solid #72A3ED;
     }
@@ -111,39 +96,19 @@
       text-decoration: none;
     }
 
+    .lista li:hover { background: #e0ebff; }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <img src="imagenes/foto.jpg" alt="Foto de perfil" />
   <nav class="nav-links">
-    <a href="#hero">Inicio</a>
-    <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
-    <a href="#habilidades">Habilidades</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="card">
-    <h1>Bienvenida a mi Portafolio</h1>
-    <p>Este es mi espacio profesional y académico.</p>
-  </div>
-</section>
-
-<!-- SOBRE MI -->
-<section id="sobre-mi">
-  <div class="card">
-    <h2>Sobre mí</h2>
-    <p>Aquí irá tu descripción personal.</p>
-  </div>
-</section>
-
-<!-- PROYECTOS -->
 <section id="proyectos">
   <div class="card">
     <h2>Mis Trabajos Académicos</h2>
@@ -154,7 +119,7 @@
     </div>
     <div id="quices" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/quiz1/Ejercicio%20Práctico%201.pdf" target="_blank">Quiz 1</a></li>
+        <li><a href="proyectos/quiz1/Ejercicio Práctico 1.pdf" target="_blank">Quiz 1</a></li>
       </ul>
     </div>
 
@@ -164,8 +129,8 @@
     </div>
     <div id="parciales" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/parciales/Parcial%201/Parcial%201.pkt" target="_blank">Parcial 1</a></li>
-        <li><a href="proyectos/parciales/Parcial%202.zip" download>Parcial 2</a></li>
+        <li><a href="proyectos/parciales/Parcial 1" target="_blank">Parcial 1</a></li>
+        <li><a href="proyectos/parciales/Parcial 2.zip" download>Parcial 2</a></li>
       </ul>
     </div>
 
@@ -175,8 +140,8 @@
     </div>
     <div id="investigaciones" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/investigaciones/Investigación%201%20de%20Programación%20I.pdf" target="_blank">Investigación 1</a></li>
-        <li><a href="proyectos/investigaciones/Investigación%202,%20Programación.pdf" target="_blank">Investigación 2</a></li>
+        <li><a href="proyectos/investigaciones/Investigación 1 de Programación I.pdf" target="_blank">Investigación 1</a></li>
+        <li><a href="proyectos/investigaciones/Investigación 2, Programación.pdf" target="_blank">Investigación 2</a></li>
       </ul>
     </div>
 
@@ -186,19 +151,11 @@
     </div>
     <div id="labs" class="contenido">
       <ul class="lista">
-        <li><a href="proyectos/laboratorios/Laboratorio%201,%20Programaciono%20I.pdf" target="_blank">Laboratorio 1</a></li>
-        <li><a href="proyectos/laboratorios/Laboratorio%20Práctica%202,%20programación%20I%205.pdf" target="_blank">Laboratorio 2</a></li>
+        <li><a href="proyectos/laboratorios/Laboratorio 1, Programaciono I.pdf" target="_blank">Laboratorio 1</a></li>
+        <li><a href="proyectos/laboratorios/Laboratorio Práctica 2, programación I 5.pdf" target="_blank">Laboratorio 2</a></li>
       </ul>
     </div>
 
-  </div>
-</section>
-
-<!-- HABILIDADES -->
-<section id="habilidades">
-  <div class="card">
-    <h2>Habilidades</h2>
-    <p>Lista de habilidades aquí...</p>
   </div>
 </section>
 
@@ -207,28 +164,30 @@ function toggle(id, elemento) {
   const el = document.getElementById(id);
   const flecha = elemento.querySelector(".flecha");
 
+  // Oculta todo excepto el que toca
   document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
   document.querySelectorAll(".flecha").forEach(f => f.classList.remove("abierto"));
 
-  // Mostrar/Ocultar
+  // Alterna visibilidad
   el.style.display = (el.style.display === "block") ? "none" : "block";
+
+  // Flecha
   flecha.classList.toggle("abierto");
 
-  // Scroll hacia los archivos
+  // Scroll hasta mostrar archivos
   setTimeout(() => {
-    window.scrollTo({
-      top: el.getBoundingClientRect().top + window.scrollY - 140,
-      behavior: "smooth"
-    });
-  }, 200);
+    const offset = el.offsetTop - 120;
+    window.scrollTo({ top: offset, behavior: "smooth" });
+  }, 150);
 }
 </script>
 
 </body>
 </html>
+
 
 
 
