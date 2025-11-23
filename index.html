@@ -27,14 +27,26 @@
       box-shadow: 0 0 25px rgba(114,163,237,0.6);
     }
 
-    /* 🔹 FOTO DEL HEADER OPTIMIZADA */
+    /* CONTENEDOR FOTO + NOMBRE */
+    .perfil-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     header img {
-      width: 65px;
-      height: 65px;
-      object-fit: cover;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       border: 3px solid white;
-      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+      object-fit: cover;
+    }
+
+    .nombre-header {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 1px;
     }
 
     .nav-links a {
@@ -73,7 +85,7 @@
       text-align: center;
     }
 
-    /* 🔹 CATEGORÍAS SIN FLECHA */
+    /* CATEGORIAS SIN FLECHA */
     .categoria {
       background: #72A3ED;
       color: white;
@@ -82,13 +94,13 @@
       border-radius: 12px;
       cursor: pointer;
       font-size: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
     }
 
-    .contenido { 
-      display: none; 
-      padding: 15px 0; 
-    }
+    .contenido { display: none; padding: 15px 0; }
 
     .lista {
       list-style: none;
@@ -161,7 +173,11 @@
 
 <!-- HEADER -->
 <header>
-  <img src="imagenes/foto.jpg" alt="Foto de perfil" />
+  <div class="perfil-header">
+    <img src="imagenes/foto.jpg" alt="Foto de perfil" />
+    <span class="nombre-header">Stefany Guerrero</span>
+  </div>
+
   <nav class="nav-links">
     <a href="#hero">Inicio</a>
     <a href="#sobre-mi">Sobre mí</a>
@@ -240,7 +256,7 @@
   </div>
 </section>
 
-<!-- ⭐ CERTIFICADOS -->
+<!-- CERTIFICADOS -->
 <section id="certificados">
   <div class="card">
     <h2>Certificados</h2>
@@ -258,7 +274,7 @@
   </div>
 </section>
 
-<!-- ⭐ HABILIDADES -->
+<!-- HABILIDADES -->
 <section id="habilidades">
   <div class="card">
     <h2>Habilidades</h2>
@@ -302,16 +318,20 @@
 function toggle(id) {
   const el = document.getElementById(id);
 
+  // Cerrar los demás
   document.querySelectorAll(".contenido").forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
 
+  // Abrir/cerrar el seleccionado
   el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
 
 </body>
 </html>
+
+
 
 
 
